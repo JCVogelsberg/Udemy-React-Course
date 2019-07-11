@@ -1,0 +1,28 @@
+Destructuring
+-------------------
+
+- Destructuring allows you to extract array elements or object properties and store them in variables
+
+
+- Array Destructuring:
+  * Order defines which property we take
+
+  [a,b] = ['Hello','Max']
+  console.log(a) // Hello
+  console.log(b) // Max
+
+  const numbers = [1,2,3];
+  [num1, ,num2] = numbers;   <--- skip a space = skip an element in the array
+
+  console.log(num1, num2); // 1 3
+
+-------------------
+
+- Object Destructuring:
+  * Property name defines which property we take
+
+  {name} = {name:'Max',age:28}
+  console.log(name) // Max  
+  console.log(age) // undefined
+
+

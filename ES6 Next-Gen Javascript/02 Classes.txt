@@ -1,0 +1,37 @@
+Classes
+-----------------------------
+
+- Blueprints for objects
+- Created with class keywords
+- Can have both Properties & Methods:
+  * Properties: variables attached to classes
+  * Methods: functions attached to classes
+- Classes are used by React to create components, and is one of two ways of doing so
+
+
+Class Example:
+
+  class Person {
+      constructor() {
+        this.name = 'Jeffy';      <--- 'this' keyword creates properties
+      }
+      printMyName() {             <--- method
+          console.log(this.name);
+      }
+  }
+
+  const person = new Person();       <--- stores an instance in a const
+  person.printMyName();
+
+  -----------------------------
+
+  class Person extends otherClass {  <--- 'extends': inherits otherClass's prop. & methods
+      constructor() {
+        super();                     <--- superconstructor necessary for extension 
+        this.name = 'Jeffy';    
+      }
+      printMyName() {           
+          console.log(this.name);
+      }
+  }
+    

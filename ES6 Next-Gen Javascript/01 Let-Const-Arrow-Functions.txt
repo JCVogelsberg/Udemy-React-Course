@@ -1,0 +1,50 @@
+Let, Const, & Arrow Functions
+-----------------------------
+
+Let & Const
+- Diff ways of creating variables, mostly replacing "var"
+- Let: for variable values that can change
+- Const: for constant value, never changes  <--- most common in this React course
+
+-----------------------------
+
+Arrow Functions
+- Another way of creating JS functions
+- Example:
+
+  OLD
+    function myFunc(arg) {
+      ...
+    }
+
+  NEW
+    const myFunc = (arg) => {
+      ...
+    } 
+
+- Shortcuts:
+  * If only one argument (no more/less), you can omit the parentheses (for consistency, I'm not going to ever do this)
+  * Inline Syntax: If all the funtion does is return, you can omit curly braces, omit 'return', and put it all on one line (I'm not going to do this either).
+  * EX:
+
+    NORMAL
+    const myFunc = (arg) => {
+      return 'duh';
+    }
+
+    INLINE SYNTAX
+    const myFunc = arg => 'duh';
+
+
+
+------------------------------------------------------------
+|
+|  Revisit Later...
+|  There is some connection between the arrow function
+|  and the 'this' keyword...
+| 
+------------------------------------------------------------
+
+
+
+

@@ -1,0 +1,23 @@
+The Spread & Rest Operator
+----------------------------
+
+- It is just three dots = ...
+- Called spread or rest, depending on where it's used
+
+- Spread Operator: 
+  * Used to split up array elements or object properties
+  * EX:
+    const newArray = [...oldArray,1,2]   <-- takes all elements from oldArray, and adds 1 & 2
+    const newObject = {...oldObject, newProps:5}   <-- new object with all properties from oldObject, plus the new property newProp with the value of 5 (if it already had a newProp, it will be overwritten)
+
+----------------------------
+
+- Rest Operator:
+  * Used to merge a list of function arguments into an array
+  * EX:
+
+    const filter = (...args) => {   <--- takes multiple arguments, turns them into an array
+      return args.filter(i => i === 1);   <--- now array methods (like filter()) will work
+    }
+
+    console.log(filter(1,2,3));   <--- will return 1, as it is the only element in the argument array that === 1

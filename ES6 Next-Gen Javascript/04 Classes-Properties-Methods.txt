@@ -1,0 +1,36 @@
+Classes, Properties, & Methods
+--------------------------------
+
+- New ES7 JS Syntax for properties and methods
+- For properties, you no longer have to use the constructor function, you can assign a property directly inside your class.
+
+
+Class "Person" Example
+
+  Old Way:
+    class Person {
+      constructor() {
+        this.myProperty = 'value';
+      }
+    }
+
+
+  New, ES7 Way:
+    class Person {
+      myProperty = 'value';
+    }
+
+
+--------------------------------
+
+- For methods, you can create a method in a similar fashion to a property.
+- 
+
+  Old Way:
+    myMethod () {...}
+
+  New, ES7 Way: 
+    myMethod = () => {...}
+
+
+

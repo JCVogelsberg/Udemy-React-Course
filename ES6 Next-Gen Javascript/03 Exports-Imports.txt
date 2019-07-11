@@ -1,0 +1,40 @@
+Exports & Imports
+-----------------------------
+- Inside a JS file, we can import content from another JS file
+- There are multiple ways to export (default & named), and multiple ways to import
+- Import and Export types need to match!
+
+
+Export Example:
+
+- Default Export
+  const Person = { name: 'Jay' }
+  export default Person          <--- export at bottom of file
+
+
+- Named Export
+  export const Derp = () => {}
+  export const BaseData = 10;     <--- export in front of object
+
+-----------------------------
+
+Import Example:
+
+- Importing Default Exports
+  import person from './person.js'
+  import prs from './person.js'    <--- default exports can be renamed
+
+
+- Importing Named Exports
+  import {Derp} from './otherFile.js'
+  import {BaseData} from './otherFile.js'
+  import * as bundled from './otherFile.js'
+
+    {} - curly braces explicitly target 'named' exports, because multiple objects imported, nothing is default export
+
+    'as bundled' - a function in the file that bundles everything for export
+
+
+
+
+
