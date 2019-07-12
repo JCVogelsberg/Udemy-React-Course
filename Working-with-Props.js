@@ -1,5 +1,5 @@
-Working with Props
---------------------
+// Working with Props
+// --------------------
 
 - Props: attributes are passed to receiving components thru argument named "props" (although it can be named anything)
 

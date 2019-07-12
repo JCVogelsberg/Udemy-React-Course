@@ -1,5 +1,5 @@
-What the Hell is State?!
-----------------------------
+// What the Hell is State?!
+// ----------------------------
 
 - State is managed from inside a component, rather than outside like props.
 

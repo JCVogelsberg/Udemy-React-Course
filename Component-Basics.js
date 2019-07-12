@@ -1,5 +1,5 @@
-Component Basics
---------------------
+// Component Basics
+// --------------------
 
 - One job EVERY React component must do: return some HTML to the DOM
 
