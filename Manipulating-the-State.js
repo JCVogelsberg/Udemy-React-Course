@@ -1,5 +1,5 @@
-Manipulating the State
--------------------------
+// Manipulating the State
+// -------------------------
 
 - setState()
   * takes an object as an argument
@@ -21,4 +21,5 @@ EX:
 
 - Changing state or props are the only thing that change the DOM in React
 
-- 
+
+* * * When you call a method that has setState() in it, it changes the state of the DOM * * *

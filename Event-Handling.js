@@ -1,5 +1,5 @@
-Event Handling
---------------------
+// Event Handling
+// --------------------
 
 - Our course example is getting a button to do something. 
 

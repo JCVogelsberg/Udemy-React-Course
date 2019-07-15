@@ -4,8 +4,7 @@
 - State is managed from inside a component, rather than outside like props.
 
 - The state property is only available in components that extend components (ie: class-based components).
-  
-- React hooks (new hotness) allow you to manage state in functional components
+  * React hooks (new hotness) will allow you to manage state in functional components
 
 - You should use functional components as often as possible, because you should be careful with state!
 
@@ -40,7 +39,7 @@ REVIEW
 
 EX:
   state = {
-    stateExampleArray: [                   <----- an array        
+    stateExampleArray: [        // <----- an array        
       { name: 'Max', age: 28 },
       { name: 'Manu', age: 29 },
       { name: 'Stephanie', age: 26 }
@@ -67,8 +66,8 @@ EX:
 
 
 What makes State a special property?
-- The way it is used above isn't special
-- State can be changed, and if changes, React will re-render the DOM, and that is actually pretty damned special.
+- The way it is used above isnt special
+- State can be changed, and if changed, React will re-render the DOM, and that is actually pretty damned special.
 
 
 

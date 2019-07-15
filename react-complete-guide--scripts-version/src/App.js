@@ -6,22 +6,22 @@ class App extends Component {
   state = {
     personsArray: [
       { name: 'Max', age: 28 },
-      { name: 'Derf', age: 17 },
+      { name: 'Manu', age: 29 },
       { name: 'Stephanie', age: 26 }
     ]
   }
 
+
   switchNameHandler = () => {
-  //  console.log('Was clicked!');
-  //  this.state.personsArray[0].name = 'Maximilian';
-    this.setState({
+    this.setState({       // setState changes the state
       personsArray: [
-        { name: 'Maximilian', age: 28 },
-        { name: 'Derf', age: 17 },
-        { name: 'Stephanie', age: 27 }
+        { name: 'MAX!', age: 28 },
+        { name: 'MANU!', age: 29 },
+        { name: 'STEPHANIE!', age: 27 }
       ]
     })
   }
+
 
   render() {
     return (
@@ -33,8 +33,11 @@ class App extends Component {
         <Person name={this.state.personsArray[1].name} age={this.state.personsArray[1].age} />
         <Person name={this.state.personsArray[2].name} age={this.state.personsArray[2].age} />
       </div>
+                      // Access the values in state in render method using 'this'
     );
+    // return React.createElement('div', {className: 'App'}, React.)
   }
 }
 
 export default App;
+
