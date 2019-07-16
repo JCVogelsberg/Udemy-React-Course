@@ -40,7 +40,8 @@ Functional components vs. Class-based components
 
 - Class-based components 
   * also referred to as "containers", "smart" or "stateful" components
-
+  * will always have a render() method 
+  
   class Cmp extends Component { 
     render () { 
       return <div>some JSX</div> 

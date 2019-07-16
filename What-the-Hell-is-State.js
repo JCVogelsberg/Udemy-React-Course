@@ -24,6 +24,7 @@ REVIEW
 |
 |    - Class-based components 
 |      * "containers", "smart" or "stateful"
+|      * will always have a render() method 
 |
 |      class Cmp extends Component { 
 |        render () { 

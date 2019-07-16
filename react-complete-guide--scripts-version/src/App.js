@@ -27,11 +27,19 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Hi, I'm a React App!</h1>
-        <p>This is really working</p>
+        <p>This is really working!</p>
         <button onClick={this.switchNameHandler}>Switch Name</button>
-        <Person name={this.state.personsArray[0].name} age={this.state.personsArray[0].age} />
-        <Person name={this.state.personsArray[1].name} age={this.state.personsArray[1].age} />
-        <Person name={this.state.personsArray[2].name} age={this.state.personsArray[2].age} />
+        <Person 
+          name={this.state.personsArray[0].name} 
+          age={this.state.personsArray[0].age} 
+        />
+        <Person name={this.state.personsArray[1].name} age={this.state.personsArray[1].age}>
+          My Hobbies: Racing
+        </Person>  
+        <Person 
+          name={this.state.personsArray[2].name} 
+          age={this.state.personsArray[2].age} 
+        />
       </div>
                       // Access the values in state in render method using 'this'
     );
