@@ -12,14 +12,25 @@ class App extends Component {
   }
 
 
-  switchNameHandler = () => {
+  switchNameHandler = (newName) => {
     this.setState({       // setState changes the state
       personsArray: [
-        { name: 'MAX!', age: 28 },
+        { name: newName, age: 28 },
         { name: 'MANU!', age: 29 },
         { name: 'STEPHANIE!', age: 27 }
       ]
     })
+  }
+
+
+  nameChangedHandler = (event) => {
+    this.setState({       // setState changes the state
+      personsArray: [
+        { name: 'Max', age: 28 },
+        { name: event.target.value, age: 29 },
+        { name: 'Stephanie!', age: 26 }
+      ]
+    }) 
   }
 
 
@@ -28,24 +39,32 @@ class App extends Component {
       <div className="App">
         <h1>Hi, I'm a React App!</h1>
         <p>This is really working!</p>
-        <button onClick={this.switchNameHandler}>Switch Name</button>
+        <button onClick={() => { return this.switchNameHandler('NeRF!!!')} }>Switch Name</button>      
         <Person 
           name={this.state.personsArray[0].name} 
           age={this.state.personsArray[0].age} 
         />
-        <Person name={this.state.personsArray[1].name} age={this.state.personsArray[1].age}>
+        <Person 
+          name={this.state.personsArray[1].name} 
+          age={this.state.personsArray[1].age}
+          click={this.switchNameHandler.bind(this, 'Max!')}
+          changed={this.nameChangedHandler} >
           My Hobbies: Racing
         </Person>  
-        <Person 
+        <Person   
           name={this.state.personsArray[2].name} 
           age={this.state.personsArray[2].age} 
         />
       </div>
-                      // Access the values in state in render method using 'this'
+        
     );
     // return React.createElement('div', {className: 'App'}, React.)
   }
 }
 
 export default App;
+
+    // Access the values in state in render method using 'this'
+
+
 

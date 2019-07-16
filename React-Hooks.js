@@ -1,6 +1,19 @@
 // React Hooks
 // ------------------
 
+
+------------------------------------
+|
+| TL;DR:
+|
+| class-based = state
+|
+| functional = useState
+|
+|
+------------------------------------
+
+
 - setState() only available in class-based components
 
 - Starting in React 16.8, React hooks can manage state in functional components
