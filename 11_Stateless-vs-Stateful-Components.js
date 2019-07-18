@@ -17,7 +17,7 @@ Stateful components
 -----------------------------------
 
 Stateless components
-- Stateless component have no internal state management
+- Stateless components have no internal state management
 - Also known as:
   * 'dumb' components, because they have no internal logic
   * 'presentational' components, because they present something, output data

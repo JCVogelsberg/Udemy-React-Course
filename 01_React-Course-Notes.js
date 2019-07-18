@@ -18,3 +18,13 @@ React Course Intro
 - JSX Uppercase/Lowercase element names:
   * All elements starting with lowercase letters, are JSX elements
   * When you create your own custom components, make them Uppercase
+
+--------
+
+QUICK REFERENCE
+
+Use 'create-react-app project-name --scripts-version 1.1.5' to start a new project-name
+
+Close Dev Server: CTL+C
+
+

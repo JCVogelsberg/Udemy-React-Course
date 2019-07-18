@@ -1,0 +1,10 @@
+/* UserOutput.css */
+
+
+.userOutput {
+  width: 60%;
+  margin: 2rem auto 0;
+  border: 1px solid red;
+  box-shadow: 4px 4px 5px blue;
+  padding: 1rem 1rem;
+}
