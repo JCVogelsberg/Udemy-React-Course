@@ -6,20 +6,12 @@ import UserOutput from './UserOutput/UserOutput.js';
 
 class App extends Component {
   state = {
-    userInputArray: [
-      { userName: 'Username #1' },
-      { userName: 'Username #2' },
-      { userName: 'Username #POTATO' }
-    ]
+    userName: 'Herp Derp.'
   }
 
-  userInputChangedHandler = (event) => {
-    this.setState({       // setState changes the state
-      userInputArray: [
-        { userName: event.target.value },
-        { userName: 'Derp' },
-        { userName: 'Hurr-Durr' }
-      ]
+  usernameHandler = (event) => {
+    this.setState({
+      userName: event.target.value
     }) 
   }
 
@@ -33,20 +25,10 @@ class App extends Component {
           <h1 className="App-title">This Is Assignment #1</h1>
         </header>      
         
-        <UserOutput
-          userName={this.state.userInputArray[0].userName} 
-          changed={this.userInputChangedHandler}
-        />
-        
-        <UserOutput
-          userName={this.state.userInputArray[1].userName} 
-        //  changed={this.userInputChangedHandler}
-        />  
-        
-        <UserOutput
-          userName={this.state.userInputArray[2].userName}
-        //  changed={this.userInputChangedHandler}
-        />
+        <UserInput userName={this.state.userName} changed={this.usernameHandler} />
+        <UserOutput userName={this.state.userName} />
+        <UserOutput userName={this.state.userName} />  
+        <UserOutput userName={this.state.userName} />
 
       </div>
     );
