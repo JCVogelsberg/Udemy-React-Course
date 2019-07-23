@@ -1,0 +1,15 @@
+/* UserOutput.css */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
+
+
+.flex-container-left, .flex-container-right { display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center; -ms-flex-wrap: wrap; flex-wrap: wrap; width: 50%; height: 65vh; }
+.flex-container-left { float: left; }
+.userInput, .userOutput { border: 1px solid #4a4a4a; width: 100%; max-width: 25rem; margin: 2rem auto; padding: 1rem 0 2rem; box-shadow: 0.1rem 0.1rem 0.4rem #ccc;  background-color: #fff; position: relative; } 
+.userInput:after { content: ''; height: 2px; background-color: red; width: 100%; display: block; position: absolute; z-index: 0; top: 50%; right: -100%; }
+.userInput h2, .userOutput h2 { font-family: Lobster, serif; font-size: 2rem; margin: 0 0 1rem; }
+.userInput h2 { color: red; }
+.userOutput h2 { color: blue; }
+.userOutput:nth-child(2):before { content: ''; width: 2px; height: 100%; background-color: red; display: block; position: absolute; z-index: -1; right: 50%; top: -100%; }
+.userOutput:nth-child(2):after { content: ''; width: 2px; height: 100%; background-color: red; display: block; position: absolute; z-index: -1; right: 50%; bottom: -100%; }
