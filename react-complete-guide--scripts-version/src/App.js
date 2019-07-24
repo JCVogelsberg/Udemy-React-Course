@@ -8,7 +8,9 @@ class App extends Component {
       { name: 'Max', age: 28 },
       { name: 'Manu', age: 29 },
       { name: 'Stephanie', age: 26 }
-    ]
+    ],
+    otherState: 'some other value',
+    showPersons: false
   }
 
 
@@ -33,9 +35,16 @@ class App extends Component {
     }) 
   }
 
+  togglePersonsHandler = () => {
+    const herpDerp = this.state.showPersons;
+    this.setState({
+      showPersons: !herpDerp
+    })
+    console.log(this.state.showPersons);
+  }
+
 
   render() {
-
     const buttonStyles = {
       backgroundColor: 'white',
       font: 'inherit',
@@ -49,25 +58,37 @@ class App extends Component {
         <h1>Hi, I'm a React App!</h1>
         <p>This is really working!</p>
         <button
-          onClick={() => { return this.switchNameHandler('NeRF!!!')} }
+          onClick={this.togglePersonsHandler}
           style={buttonStyles}>
           Switch Name
         </button>      
-        <Person 
-          name={this.state.personsArray[0].name} 
-          age={this.state.personsArray[0].age} 
-        />
-        <Person 
-          name={this.state.personsArray[1].name} 
-          age={this.state.personsArray[1].age}
-          click={this.switchNameHandler.bind(this, 'Max!')}
-          changed={this.nameChangedHandler} >
-          My Hobbies: Racing
-        </Person>  
-        <Person   
-          name={this.state.personsArray[2].name} 
-          age={this.state.personsArray[2].age} 
-        />
+
+        {this.state.showPersons ? 
+          <div> 
+
+            <Person 
+              name={this.state.personsArray[0].name} 
+              age={this.state.personsArray[0].age} 
+            />
+
+            <Person 
+              name={this.state.personsArray[1].name} 
+              age={this.state.personsArray[1].age}
+              click={this.switchNameHandler.bind(this, 'Max!')}
+              changed={this.nameChangedHandler} >
+              My Hobbies: Racing
+            </Person>  
+
+            <Person   
+              name={this.state.personsArray[2].name} 
+              age={this.state.personsArray[2].age} 
+            />
+
+            [// Scary cat pic]
+            <img className="scary-cat" alt=" damn that's a scary cat" src="https://pics.me.me/scary-cat-is-scary-39716305.png" />
+          </div>
+          : null
+        }
       </div>
         
     );

@@ -4,6 +4,7 @@
 - Every component receives props, and since React 16.8, you can also manage 
 state in every component
 
+//-----------------------------------
 
 Stateful components
 - A component that manages state
@@ -14,7 +15,7 @@ Stateful components
 - You only want to have a couple of these (as few as possible)
 
 
------------------------------------
+//-----------------------------------
 
 Stateless components
 - Stateless components have no internal state management
@@ -32,7 +33,8 @@ Stateless components
       )
     };
 
------------------------------------
+
+///-----------------------------------
 
 How & when to use each
 - It is a good practice to use stateless components whenever you can
