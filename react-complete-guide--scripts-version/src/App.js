@@ -13,18 +13,6 @@ class App extends Component {
     showPersons: false
   }
 
-
-  switchNameHandler = (newName) => {
-    this.setState({       // setState changes the state
-      personsArray: [
-        { name: newName, age: 28 },
-        { name: 'MANU!', age: 29 },
-        { name: 'STEPHANIE!', age: 27 }
-      ]
-    })
-  }
-
-
   nameChangedHandler = (event) => {
     this.setState({       // setState changes the state
       personsArray: [
@@ -36,13 +24,20 @@ class App extends Component {
   }
 
   togglePersonsHandler = () => {
-    const herpDerp = this.state.showPersons;
+    const doesShow = this.state.showPersons;
     this.setState({
-      showPersons: !herpDerp
+      showPersons: !doesShow
     })
-    console.log(this.state.showPersons);
   }
 
+  deletePersonHandler = (personIndex) => {
+    const personsArrayVariable = this.state.personsArray.slice();  // 'slice' w/out arg: creates copy
+      //const personsArrayVariable = [...this.state.personsArray];  // alternative, 'spread operator'
+    personsArrayVariable.splice(personIndex, 1);    // removes one element from the array
+    this.setState({
+      personsArray: personsArrayVariable    // Sets state to new updated state of array
+    })
+  }
 
   render() {
     const buttonStyles = {
@@ -53,6 +48,22 @@ class App extends Component {
       cursor: 'pointer'
     };
 
+
+    let perSOns = null;               // create the perSOns variable
+    if (this.state.showPersons) {     // if showPersons === true...
+      perSOns = (                     // ... assign the following as perSOns' value
+        <div> 
+          {this.state.personsArray.map((personArg, index) => {
+            return <Person 
+              click={() => this.deletePersonHandler(index)} // arrow function so function doesn't trigger right away
+              name={personArg.name} 
+              age={personArg.age} 
+            />
+          })} 
+        </div> 
+      );
+    }
+
     return (
       <div className="App">
         <h1>Hi, I'm a React App!</h1>
@@ -60,35 +71,13 @@ class App extends Component {
         <button
           onClick={this.togglePersonsHandler}
           style={buttonStyles}>
-          Switch Name
-        </button>      
+          Toggle Persons
+        </button>        
 
-        {this.state.showPersons ? 
-          <div> 
+        
+        {perSOns} 
 
-            <Person 
-              name={this.state.personsArray[0].name} 
-              age={this.state.personsArray[0].age} 
-            />
 
-            <Person 
-              name={this.state.personsArray[1].name} 
-              age={this.state.personsArray[1].age}
-              click={this.switchNameHandler.bind(this, 'Max!')}
-              changed={this.nameChangedHandler} >
-              My Hobbies: Racing
-            </Person>  
-
-            <Person   
-              name={this.state.personsArray[2].name} 
-              age={this.state.personsArray[2].age} 
-            />
-
-            [// Scary cat pic]
-            <img className="scary-cat" alt=" damn that's a scary cat" src="https://pics.me.me/scary-cat-is-scary-39716305.png" />
-          </div>
-          : null
-        }
       </div>
         
     );

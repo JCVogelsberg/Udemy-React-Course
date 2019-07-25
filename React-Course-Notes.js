@@ -19,6 +19,9 @@ React Course Intro
   * All elements starting with lowercase letters, are JSX elements
   * When you create your own custom components, make them Uppercase
 
+- The React Mantra: "Everything is JavaScript."
+
+
 --------
 
 QUICK REFERENCE

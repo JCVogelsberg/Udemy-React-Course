@@ -32,5 +32,3 @@ syntax in return statement
 - If the condition left of the '?' is TRUE, we are actually calling 
 'React.createElement()'. This is what's happening behind the scenes; we
  don't have call it explicitly
-
-- 
