@@ -3,12 +3,10 @@
 */
 
 .person {
-    width: 60%;
-    margin: 16px auto;
+    width: 30rem;
+    margin: 1rem auto;
     border: 1px solid #eee;
     box-shadow: 0 2px 3px #ccc;
-    padding: 20px 16px;
+    padding: 1.25rem 1rem;
     text-align: center;
 }
-
-

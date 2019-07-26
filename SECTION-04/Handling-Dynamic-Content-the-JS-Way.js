@@ -31,8 +31,16 @@ Outputting Lists
         />
       })}  
 
--       
+*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  
+  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  
 
+  Always update state in a immutable fashion! (ie w/out mutating the original state)
+  - Create a copy
+  - Change the copy
+  - Update the state with setState
+
+  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  
+*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  * 
 
 
 
