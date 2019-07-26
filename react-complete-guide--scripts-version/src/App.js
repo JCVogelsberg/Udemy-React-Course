@@ -10,28 +10,46 @@ class App extends Component {
       { id: 'asdf11', name: 'Stephanie', age: 26 }
     ],
     otherState: 'some other value',
-    showPersons: false
-  }
+    showPersons: true
+  };
 
 
   nameChangedHandler = (event, id) => {
-    const personIndex = this.state.personsArray.findIndex(p => {
+    const personNameIndex = this.state.personsArray.findIndex(p => {
       return p.id === id;
-    })
+    });
 
-    const personVar = {   // creates a copy, changes the copy
-      ...this.state.personsArray[personIndex]  
+    const mutableCopyOfPersonsArray = {   // creates a copy, changes the copy
+      ...this.state.personsArray[personNameIndex]  
     };
 
-    personVar.name = event.target.value;  // update the name in the copy
+    mutableCopyOfPersonsArray.name = event.target.value;  // update the name in the copy
 
     const newPersonsArray = [...this.state.personsArray];  // saves the state as 'newPersonsArray'
-    newPersonsArray[personIndex] = personVar;
+    newPersonsArray[personNameIndex] = mutableCopyOfPersonsArray;
 
     this.setState({
       personsArray: newPersonsArray // set state to value of 'newPersonsArray' copy
-    }) 
-  }
+    });
+  };
+
+
+      ageChangedHandler = (event, id) => {
+        const personAgeIndex = this.state.personsArray.findIndex(x => { 
+          return x.id === id;   // return pos in array with index matching 'id' arg
+        });
+
+        const mutableCopyOfPerson = { ...this.state.personsArray[personAgeIndex] }; // assign value of person who's being changed to a var 
+
+        mutableCopyOfPerson.age = event.target.value; // changed value of age property to what was entered
+
+        const newAgePersonsArray = [...this.state.personsArray];  // assign current state to a 'newAgePersonsArray' var
+        newAgePersonsArray[personAgeIndex] = mutableCopyOfPerson; // update just the person's value that was changed
+
+        this.setState({
+          personsArray: newAgePersonsArray // update state with new info
+        });
+      };
 
 
   togglePersonsHandler = () => {
@@ -39,7 +57,7 @@ class App extends Component {
     this.setState({
       showPersons: !doesShow                  // changes showPersons valuye to opposite
     })
-  }
+  };
 
 
   deletePersonHandler = (personIndex) => {
@@ -49,7 +67,7 @@ class App extends Component {
     this.setState({
       personsArray: personsArrayVariable    // Sets state to new updated state of array
     })
-  }
+  };
 
 
   render() {
@@ -68,11 +86,12 @@ class App extends Component {
         <div> 
           {this.state.personsArray.map((personArg, index) => {
             return <Person 
-              click={() => this.deletePersonHandler(index)} // in arrow func. so func. doesn't trigger right away
+              click={ () => this.deletePersonHandler(index) } // in arrow func. so func. doesn't trigger right away
               name={personArg.name} 
               age={personArg.age} 
               key={personArg.id}
-              changed={(event) => this.nameChangedHandler(event, personArg.id)}
+              changedName={ (event) => this.nameChangedHandler(event, personArg.id) }
+              changedAge={ (event) => this.ageChangedHandler(event, personArg.id) }
             />
           })} 
         </div> 
@@ -87,7 +106,7 @@ class App extends Component {
           onClick={this.togglePersonsHandler}
           style={buttonStyles}>
           Toggle Persons
-        </button>        
+        </button> 
 
         {perSOns} 
 
