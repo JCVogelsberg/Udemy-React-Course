@@ -14,29 +14,24 @@ class App extends Component {
   }
 
 
-
-  nameChangedHandler = (event, id) => {     // 'id' CANNOT be changed, its a reserved word, apparently
+  nameChangedHandler = (event, id) => {
     const personIndex = this.state.personsArray.findIndex(p => {
-      console.log(id);
       return p.id === id;
     })
 
-    const personVar = {                        // creates a copy, changes the copy
-      ...this.state.personsArray[personIndex]  // spread operator distr. all properties of fetched object into new object 'personVar'
+    const personVar = {   // creates a copy, changes the copy
+      ...this.state.personsArray[personIndex]  
     };
-      //  Alternate option
-      //  const personVar = { Object.assign({}, this.state.personsArray[personIndex]); };
 
     personVar.name = event.target.value;  // update the name in the copy
 
-    const newPersonsArray = [...this.state.personsArray];   // saves the state as 'newPersonsArray'
+    const newPersonsArray = [...this.state.personsArray];  // saves the state as 'newPersonsArray'
     newPersonsArray[personIndex] = personVar;
 
     this.setState({
-      personsArray: newPersonsArray // set state to value of the copy you made & changed
+      personsArray: newPersonsArray // set state to value of 'newPersonsArray' copy
     }) 
   }
-
 
 
   togglePersonsHandler = () => {
@@ -47,7 +42,6 @@ class App extends Component {
   }
 
 
-
   deletePersonHandler = (personIndex) => {
     const personsArrayVariable = this.state.personsArray.slice();  // 'slice' w/out arg: creates copy
       //const personsArrayVariable = [...this.state.personsArray];  // alternative, 'spread operator'
@@ -56,7 +50,6 @@ class App extends Component {
       personsArray: personsArrayVariable    // Sets state to new updated state of array
     })
   }
-
 
 
   render() {
