@@ -7,7 +7,7 @@
 which changed, and updating only those in the DOM // <--- vid compression analogy
 
 Unique Identifier:
-- If your list comes from a DB, it will probably some sort of unique key on it
+- If your list comes from a DB, it will probably have some sort of unique key on it
 - Dont use 'index' (see example below), it is part of the list & if the list changes React 
 will update everything on it
 
@@ -34,10 +34,6 @@ EX:
   })} 
 
 
-
-
-// Flexible Lists
-// -----------------------------------
 
 
 
