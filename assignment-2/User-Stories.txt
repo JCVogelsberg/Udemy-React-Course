@@ -1,0 +1,19 @@
+REACT ASSIGNMENT #2
+------------------------
+
+USER STORIES:
+
+
+--->  #1 Create an input field (in App.js) that outputs length of entered text below
+
+      #2 Create a new component (ValidationComponent) which receives text length as a prop
+
+      #3 In ValidationComponent, output:
+          * length <5 = "Text too short." 
+          * length >=5 = "Text long enough." 
+
+      #4 Create a new component (CharComponent) and style it as an inline box
+
+      #5 Render a list of CharComponents where each where each receives a diff letter of the entered text (?)
+
+      #6 When you click a CharComponent, it should delete from the list

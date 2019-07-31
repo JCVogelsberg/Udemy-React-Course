@@ -10,10 +10,10 @@ class App extends Component {
   };
 
 
-
-
-
   render() {
+
+    let enteredTextLength = this.state.textToBeMeasured.length;
+
     return (
       <div className="App">
         <header className="App-header">
@@ -22,19 +22,22 @@ class App extends Component {
           <h2 className="App-sub-title">"The Length of Entered Text"</h2>
         </header>
 
-        <h2> Enter some text. <br/>Keep it shorter than 4 characters.</h2> 
+
+        <h2> Enter some text. </h2> 
+
         <input 
           type="text" 
           value={this.state.textToBeMeasured} 
-          onChange={(eVent) => { 
-            this.setState({textToBeMeasured : eVent.target.value});
+          onChange={(eVenT) => { 
+            this.setState({textToBeMeasured : eVenT.target.value});
           }}
         />
+        <br/><br/>
+        {enteredTextLength}
 
         <ValidationComponent
-          length={this.state.textToBeMeasured.length}
+        //   length=
         />
-
 
 
       </div>
