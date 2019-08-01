@@ -6,13 +6,22 @@ import ValidationComponent from './ValidationComponent/ValidationComponent.js';
 
 class App extends Component {
   state = {
-    textToBeMeasured: ''
+    textToBeMeasured: '',
+    textToBeMeasuredArray: []
   };
 
 
-  render() {
+  passToArray = (event) => {
+    const textToBeMeasuredArrayMutableCopy = [...this.state.textToBeMeasuredArray];
+    
+    return('derf.');
+  // We now have a mutable copy of the array in our state (textToBeMeasuredArrayMutableCopy),
+  // figure out how to turn a string into letters and push those letters to this array
 
-    let enteredTextLength = this.state.textToBeMeasured.length;
+  }
+
+
+  render() {
 
     return (
       <div className="App">
@@ -23,20 +32,17 @@ class App extends Component {
         </header>
 
 
-        <h2> Enter some text. </h2> 
+        <h2>Enter some text.</h2> 
 
-        <input 
-          type="text" 
-          value={this.state.textToBeMeasured} 
-          onChange={(eVenT) => { 
-            this.setState({textToBeMeasured : eVenT.target.value});
-          }}
+        <textarea 
+          changed={ this.passToArray }
         />
+        
         <br/><br/>
-        {enteredTextLength}
+        // Output count here
 
         <ValidationComponent
-        //   length=
+
         />
 
 

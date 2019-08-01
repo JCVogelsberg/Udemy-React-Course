@@ -28,8 +28,9 @@ Outputting Lists
           age={personArg.age} 
         />
       })}  
+    </div>
 
-// *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  
+/// *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  
 //  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  
 
   Always update state in a immutable fashion! (ie w/out mutating the original state)
