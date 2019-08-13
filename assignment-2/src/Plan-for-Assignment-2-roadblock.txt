@@ -1,0 +1,8 @@
+
+
+
+
+IDeA: 
+- As text is entered, it is pushed to an array
+- the length of the array is what is displayed
+- Don't change the state!
