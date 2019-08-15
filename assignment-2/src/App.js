@@ -1,24 +1,27 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import ValidationComponent from './ValidationComponent/ValidationComponent.js';
-
+import Validation from './Validation/Validation.js';
+import Char from './Char/Char.js';
 
 class App extends Component {
   state = {    
-    inputText: []
+    userInput: ''
   };
 
 
-  onInputChange = e => {
-    let bloRp = e.target.value.split("");
+  inputChangedHandler = (event) => {
     this.setState({
-      inputText: bloRp
+      userInput: event.target.value
     })
   };
 
 
   render() {
+
+    const charList = this.state.userInput.split('').map(ch => {    // 'map()' doesn't touch original array
+      return <Char character={ch} />;
+    });
 
     return (
       <div className="App">
@@ -32,16 +35,15 @@ class App extends Component {
 
         <input
           type="text"
-          onInput={ this.onInputChange }
-          value={ this.state.inputText.join("") }
+          onChange={ this.inputChangedHandler }
+          value={ this.state.userInput } 
         />
         
+        <p>Text length: {this.state.userInput}</p>        
         
-        <p>Text length: {this.state.inputText.length}</p>
+        <Validation inputLength={this.state.userInput.length} />
         
-        <ValidationComponent />
-        
-
+        {charList}   
 
       </div>
     );
