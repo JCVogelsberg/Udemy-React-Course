@@ -17,11 +17,27 @@ class App extends Component {
   };
 
 
+  deleteCharHandler = (index) => {
+    const textToDelete = this.state.userInput.split('');   // creates an array containing the info in the state
+    textToDelete.splice(index,1);   // remove an item at position 'index', only 1
+    const updatedText = textToDelete.join('');  // converts array back to string
+    this.setState({
+      userInput: updatedText  // update state to the value of our new string minus the item we deleted
+    });
+  };
+
+
   render() {
 
-    const charList = this.state.userInput.split('').map((blorp, index) => {  // 'split()' turns userInput into an array; map()' creates a mutable copy
-      return <Char slurpDurp={blorp} key={index} />;   // uses second argument in map() as a unique key (not ideal)
-    });
+    const charList = this.state.userInput.split('').map(
+      (blorp, index) => {  // 'split()' turns userInput into an array; map()' creates a mutable copy
+        return <Char 
+          slurpDurp={blorp} 
+          key={index}    // uses second argument in map() as a unique key (not ideal)
+          clicked={() => this.deleteCharHandler(index)}
+        />;
+      }
+    );
 
 
     return (

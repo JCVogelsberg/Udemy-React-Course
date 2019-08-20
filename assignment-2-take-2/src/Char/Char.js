@@ -4,7 +4,7 @@ import './Char.css';
 
 const char = (props) => {
   return(
-    <div className="charClass">
+    <div className="charClass" onClick={props.clicked}>
       {props.slurpDurp}
     </div>
   );
