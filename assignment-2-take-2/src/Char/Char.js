@@ -4,10 +4,10 @@ import './Char.css';
 
 const char = (props) => {
   return(
-    <div className="charClass" onClick={props.clicked}>
-      {props.character}
+    <div className="charClass">
+      {props.slurpDurp}
     </div>
   );
-}
+};
 
 export default char;

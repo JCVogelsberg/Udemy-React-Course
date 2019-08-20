@@ -17,10 +17,25 @@ class App extends Component {
   };
 
 
+  deleteCharHandler = ( index ) => {
+    const text = this.state.userInput.split('');  
+    text.splice(index, 1);    // removes one element from the array at the position of 'index'
+    
+    const updatedText = text.join(''); // join() creates/returns new string from all elements in array
+    this.setState({
+      userInput: updatedText    // Sets state to new updated state of array
+    })
+  };
+
+
   render() {
 
-    const charList = this.state.userInput.split('').map(ch => {    // 'map()' doesn't touch original array
-      return <Char character={ch} />;
+    const charList = this.state.userInput.split('').map((ch, index) => {    // 'map()' doesn't touch original array
+      return <Char 
+        character={ch} 
+        key={index} 
+        clicked={() => this.deleteCharHandler(index)}  // nameless function so it doesn't immediately fire
+      />;
     });
 
     return (
@@ -39,7 +54,7 @@ class App extends Component {
           value={ this.state.userInput } 
         />
         
-        <p>Text length: {this.state.userInput}</p>        
+        <p>Text length: {this.state.userInput.length}</p>
         
         <Validation inputLength={this.state.userInput.length} />
         

@@ -22,7 +22,7 @@ There is an easy way to get it all: "Create React App".
   * gtg!
 
 - Navigate to the directory you want to use, enter:
-    create-react-app app-name --scripts-version 1.1.5
+    create-react-app APP-NAME --scripts-version 1.1.5
 
 - CLOSE DEV SERVER: CTL+C
 
