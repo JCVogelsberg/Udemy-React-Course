@@ -7,3 +7,7 @@
   border: 1px solid #000;
   text-align: center;
 }
+
+.charClass:hover { 
+  animation: App-logo-spin infinite 2.5s linear; 
+}

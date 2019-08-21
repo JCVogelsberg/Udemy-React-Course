@@ -2,8 +2,13 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 0.5s linear;
+.App-logo-1 {
+  animation: App-logo-spin-reverse infinite 5s linear;
+  height: 130px;
+}
+
+.App-logo-2 {
+  animation: App-logo-spin infinite 5s linear;
   height: 130px;
 }
 
@@ -12,10 +17,15 @@
   height: 180px;
   padding: 20px;
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 2em;
+  font-weight: 400;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .App-intro {
@@ -25,4 +35,9 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+@keyframes App-logo-spin-reverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
 }

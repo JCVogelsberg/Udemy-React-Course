@@ -43,8 +43,9 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <img src={logo} className="App-logo-1" alt="logo" />
+          <h1 className="App-title">Assignment 2, Take 2</h1>
+          <img src={logo} className="App-logo-2" alt="logo" />
         </header>
 
         <h2>Enter Some Text:</h2>
