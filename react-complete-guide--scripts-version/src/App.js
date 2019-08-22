@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Radium, { StyleRoot } from 'radium';
 import './App.css';
 import Person from './Person/Person.js';
 
@@ -11,7 +12,7 @@ class App extends Component {
       { id: 'asdf11', name: 'Stephanie', age: 26 }
     ],
     otherState: 'some other value',
-    showPersons: true,
+    showPersons: false,
   };
 
 
@@ -78,7 +79,11 @@ class App extends Component {
       font: 'inherit',
       border: '1px solid blue',
       padding: '8px',
-      cursor: 'pointer'
+      cursor: 'pointer',
+      ':hover': {
+        backgroundColor: 'lightgreen',
+        color: 'black'
+      }
     };
 
 
@@ -101,6 +106,10 @@ class App extends Component {
       );
 
       buttonStyles.backgroundColor = 'red';
+      buttonStyles[':hover'] = {
+        backgroundColor: 'salmon',
+        color: 'black'
+      }
     }
 
     const classes = []
@@ -114,6 +123,7 @@ class App extends Component {
 
 
     return (
+      <StyleRoot>
       <div className="App">
         <h1>Hi, I'm a React App!</h1>
         <p className={classes.join(' ')}>This is really working!</p>
@@ -126,13 +136,13 @@ class App extends Component {
         {perSOns} 
 
       </div>
-        
+      </StyleRoot>  
     );
     // return React.createElement('div', {className: 'App'}, React.)
   }
 }
 
-export default App;
+export default Radium(App);
 
 // Access the values in state in render method using 'this'    
 

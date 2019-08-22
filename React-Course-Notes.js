@@ -30,4 +30,8 @@ Use 'create-react-app project-name --scripts-version 1.1.5' to start a new proje
 
 Close Dev Server: CTL+C
 
+Fix vulnerabilities:
+  'npm audit' for details
+  'npm audit fix' to fix them
+
 
