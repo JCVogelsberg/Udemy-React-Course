@@ -34,4 +34,5 @@ Fix vulnerabilities:
   'npm audit' for details
   'npm audit fix' to fix them
 
-
+Update react scripts to the latest version:
+ npm i react-scripts
