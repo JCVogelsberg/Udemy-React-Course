@@ -71,19 +71,14 @@ class App extends Component {
   };
 
 
+
+
+
   render() {
-    const buttonStyles = {
-      backgroundColor: 'green',
-      color: 'white',
-      font: 'inherit',
-      border: '1px solid blue',
-      padding: '8px',
-      cursor: 'pointer'
-    };
 
-
-    // Render Persons
+    let btnClass = '';                // creates btnClass for styles (?)
     let perSOns = null;               // create the perSOns variable
+
     if (this.state.showPersons) {     // if showPersons === true...
       perSOns = (                     // ... assign the following as perSOns' value
         <div> 
@@ -99,12 +94,11 @@ class App extends Component {
           })} 
         </div>           
       );
-
-      buttonStyles.backgroundColor = 'red';
+      btnClass = classes.Red;   /// this just handles the btn's red states when opened
     }
 
-    const assignedClasses = []
 
+    const assignedClasses = []
     if (this.state.personsArray.length <= 2) {
       assignedClasses.push( classes.red );    /// push 'red' class to assignedClasses array
     };
@@ -118,8 +112,8 @@ class App extends Component {
         <h1>Hi, I'm a React App!</h1>   
         <p className={assignedClasses.join(' ')}>This is really working!</p>
         <button
-          onClick={this.togglePersonsHandler}
-          style={buttonStyles}>
+          className={btnClass}
+          onClick={this.togglePersonsHandler} >
           Toggle Persons
         </button> 
 
