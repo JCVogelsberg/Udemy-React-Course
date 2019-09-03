@@ -17,7 +17,7 @@ class App extends Component {
 
   nameChangedHandler = (event, id) => {
     const personNameIndex = this.state.personsArray.findIndex(p => {
-      return p.userId === id;
+      return p.id === id;
     });
 
     const mutableCopyOfPersonsArray = {   // creates a copy, changes the copy
