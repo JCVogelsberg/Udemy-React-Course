@@ -94,13 +94,13 @@ class App extends Component {
           })} 
         </div>           
       );
-      btnClass = classes.Red;   /// this just handles the btn's red states when opened
+      btnClass = classes.Red;   // this just handles the btn's red states when opened
     }
 
 
     const assignedClasses = []
     if (this.state.personsArray.length <= 2) {
-      assignedClasses.push( classes.red );    /// push 'red' class to assignedClasses array
+      assignedClasses.push( classes.red );    // push 'red' class to assignedClasses array
     };
     if (this.state.personsArray.length <= 1) {
       assignedClasses.push( classes.bold ); // push 'bold' class to assignedClasses array

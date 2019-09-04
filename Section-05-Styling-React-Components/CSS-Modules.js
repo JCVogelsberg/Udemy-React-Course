@@ -80,5 +80,9 @@ EX:
 
 
 
+By the way, if you somehow also want to define a global (i.e. un-transformed) CSS class 
+in such a .css  file, you can prefix the selector with :global .
 
-By the way, if you somehow also want to define a global (i.e. un-transformed) CSS class in such a .css  file, you can prefix the selector with :global .
+
+
+

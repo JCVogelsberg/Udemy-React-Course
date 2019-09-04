@@ -1,7 +1,8 @@
 Using a Build Workflow
 ------------------------
 
-- Not many browsers support ALL next-gen JS features, so a build workflow that compiles these features is necessary.
+- Not many browsers support ALL next-gen JS features, so a build workflow that compiles these features 
+is necessary.
 
 
 - Productivity:
