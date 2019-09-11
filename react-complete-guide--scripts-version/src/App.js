@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import classes from './App.module.css';
-import Person from './Person/Person.js';
+import Person from './Person/Person';
+import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
 
 
 class App extends Component {
@@ -83,14 +84,16 @@ class App extends Component {
       perSOns = (                     // ... assign the following as perSOns' value
         <div> 
           {this.state.personsArray.map((personArg, index) => {
-            return <Person 
-              name={personArg.name} 
-              age={personArg.age} 
-              key={personArg.id}
-              delete={this.deletePersonHandler}
-              changedName={ (event) => this.nameChangedHandler(event, personArg.id) }
-              changedAge={ (event) => this.ageChangedHandler(event, personArg.id) }
-            />
+            return <ErrorBoundary key={personArg.id} >
+              <Person 
+                name={personArg.name} 
+                age={personArg.age} 
+                delete={this.deletePersonHandler}
+                changedName={ (event) => this.nameChangedHandler(event, personArg.id) }
+                changedAge={ (event) => this.ageChangedHandler(event, personArg.id) }
+              />
+            </ErrorBoundary>
+
           })} 
         </div>           
       );
@@ -107,7 +110,7 @@ class App extends Component {
     }
 
 
-    return (
+    return ( 
       <div className={classes.App}>
         <h1>Hi, I'm a React App!</h1>   
         <p className={assignedClasses.join(' ')}>This is really working!</p>
@@ -120,7 +123,6 @@ class App extends Component {
         {perSOns} 
 
       </div>
-
     );
     // return React.createElement('div', {className: 'App'}, React.)
   }

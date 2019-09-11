@@ -36,3 +36,17 @@ Fix vulnerabilities:
 
 Update react scripts to the latest version:
  npm i react-scripts
+
+
+'npm start' - runs a script that the app maker built for easy starting of the app 
+'npm install' - installs all the packages in package.json
+  * run 'npm install' first, then run 'npm start'
+
+'npm outdated' -  discover new releases of the packages.
+'npm update' - minor/patch updates
+
+
+
+
+
+
