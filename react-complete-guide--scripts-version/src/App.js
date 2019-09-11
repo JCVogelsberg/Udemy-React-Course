@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import classes from './App.module.css';
 import Person from './Person/Person';
-import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
 
 
 class App extends Component {
+
   state = {
     personsArray: [
       { id: 'asfa1', name: 'Max', age: 28 },
@@ -14,6 +14,8 @@ class App extends Component {
     otherState: 'some other value',
     showPersons: false,
   };
+
+
 
 
   nameChangedHandler = (event, id) => {
@@ -35,7 +37,11 @@ class App extends Component {
     });
   };
 
-  // My Own Handler
+
+
+
+
+  // My Own Handler, Which Updates Age
   ageChangedHandler = (event, id) => {
     const personAgeIndex = this.state.personsArray.findIndex(x => { 
       return x.id === id;   // return array position with index matching 'id' argument
@@ -54,12 +60,18 @@ class App extends Component {
   };
 
 
+
+
+
   togglePersonsHandler = () => {
     const doesShow = this.state.showPersons;  // creates 'doesShow'
     this.setState({
       showPersons: !doesShow                  // changes showPersons valuye to opposite
     })
   };
+
+
+
 
 
   deletePersonHandler = (personIndex) => {
@@ -73,35 +85,35 @@ class App extends Component {
 
 
 
-
-
+  // This is the render method. I think it turns JS into HTML
+  // Access the values in state in render method using 'this'    
   render() {
 
-    let btnClass = '';                // creates btnClass for styles (?)
-    let perSOns = null;               // create the perSOns variable
+    let btnClass = '';   // creates btnClass for styles (?)
+    let perSOns = null;   // create the perSOns variable
 
-    if (this.state.showPersons) {     // if showPersons === true...
-      perSOns = (                     // ... assign the following as perSOns' value
+    if (this.state.showPersons) {   // if showPersons === true...
+      perSOns = (   // ... assign the following as perSOns' value
         <div> 
           {this.state.personsArray.map((personArg, index) => {
-            return <ErrorBoundary key={personArg.id} >
-              <Person 
-                name={personArg.name} 
-                age={personArg.age} 
-                delete={this.deletePersonHandler}
-                changedName={ (event) => this.nameChangedHandler(event, personArg.id) }
-                changedAge={ (event) => this.ageChangedHandler(event, personArg.id) }
-              />
-            </ErrorBoundary>
-
+            return <Person 
+              name={personArg.name} 
+              age={personArg.age} 
+              key={personArg.id}
+              delete={this.deletePersonHandler}
+              changedName={ (event) => this.nameChangedHandler(event, personArg.id) }
+              changedAge={ (event) => this.ageChangedHandler(event, personArg.id) }
+            />
           })} 
         </div>           
       );
-      btnClass = classes.Red;   // this just handles the btn's red states when opened
+      btnClass = classes.Red;   /// This handles the btn's red states when opened
     }
 
 
-    const assignedClasses = []
+
+    // This is an array that holds styles from App.module.css (imported as 'classes')
+    const assignedClasses = [] 
     if (this.state.personsArray.length <= 2) {
       assignedClasses.push( classes.red );    // push 'red' class to assignedClasses array
     };
@@ -110,6 +122,9 @@ class App extends Component {
     }
 
 
+
+    // This is the return statement; it renders stuff to the screen. 
+    // Keep yo damn logic outta here!
     return ( 
       <div className={classes.App}>
         <h1>Hi, I'm a React App!</h1>   
@@ -130,7 +145,7 @@ class App extends Component {
 
 export default App;
 
-// Access the values in state in render method using 'this'    
+
 
 
 
